@@ -2,12 +2,16 @@
 // jadi, seluruh import bawaan akan dihapus
 import './App.css'
 
-// kita akan mengimpor 
+// kita akan mengimpor
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 // file yang akan dirender
 import Layout from "./Pages/Layout.jsx"
 import Home from "./Pages/Home.jsx"
+
+// file terpisah yang akan dirender (berdasarkan kondisi)
+import Register from "./Pages/Auth/Register.jsx"
+import Login from "./Pages/Auth/Login.jsx"
 
 // ------------------------------------------------------------------------------------------------
 
@@ -18,6 +22,8 @@ import Home from "./Pages/Home.jsx"
 //       <Routes>
 //         <Route path='/' element={<Layout />}>
 //           <Route index element={<Home />} />
+//           <Route path="/register" element={<Register />}/>
+//           <Route path="/login" element={<Login />}/>
 //         </Route>
 //       </Routes>
 //     </BrowserRouter>
@@ -78,6 +84,12 @@ export default function App() {
                     {/* karena komponen ini tidak memiliki path tersendiri, dan merupakan komponen index */}
                     {/* maka akan dirender mengikuti path route parent */}
                     <Route index element={<Home/>}/>
+
+                    {/* komponen ini adalah isi dari komponen layout */}
+                    {/* yang membedakan dengan komponen home adalah, komponen ini memiliki path tersendiri*/}
+                    {/* jika komponen ini dirender, maka komponen home tidak akan dirender */}
+                    <Route path="/register" element={<Register />}/>
+                    <Route path="/login" element={<Login />}/>
                 </Route>
             </Routes>
         </BrowserRouter>
