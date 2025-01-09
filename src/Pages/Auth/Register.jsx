@@ -1,4 +1,4 @@
-// menangani dan mengelola state dalam komponen React
+// menangani dan mengelola state dalam komponen React js
 // State adalah data yang dapat berubah seiring waktu, seperti input pengguna, status aplikasi, dll.
 import {useState} from "react";
 
