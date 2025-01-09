@@ -15,7 +15,7 @@ import Login from "./Pages/Auth/Login.jsx"
 
 // ------------------------------------------------------------------------------------------------
 
-// fungsi dasar pada react
+// fungsi dasar pada react js
 // function App(){
 //     return (
 //      <BrowserRouter>

@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-  // konfigurasi permintaan dari frontend ke server backend yang berada di lokasi berbeda
+  // konfigurasi permintaan dari frontend ke server backend yang berada di lokasi berbedas
   // server: {
   //   proxy: {
   //     '/api' : {

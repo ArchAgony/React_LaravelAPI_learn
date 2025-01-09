@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 
-// didapatkan dari file app.jsx yang tadi kita edit untuk membuat tampilan
+// didapatkan dari file app.jsx yang tadi kita edit untuk membuat tampilan js
 import App from './App.jsx'
 
 // mencari elemen HTML dengan ID root di file index.html
