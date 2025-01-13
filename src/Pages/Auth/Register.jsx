@@ -139,11 +139,15 @@ export default function Register() {
 
     const res =
       // Menunggu respons dari server sebelum melanjutkan ke baris berikutnya
-      await // melakukan permintaan HTTP ke server.
+      await 
+      
+      // melakukan permintaan HTTP ke server.
       fetch(
+        
         // Rute endpoint API di mana data akan dikirim
         "/api/register",
         {
+          
           // Metode HTTP untuk mengirim data
           method: "post",
 
