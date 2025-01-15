@@ -181,7 +181,7 @@ export default function Login() {
     setToken(data.token)
 
     // mengarahkan pengguna ke rute yang ditentukan ('/')
-    // navigate("/");
+    navigate("/");
     }
   }
 

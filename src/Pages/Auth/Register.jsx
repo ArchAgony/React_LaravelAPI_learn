@@ -207,7 +207,9 @@ export default function Register() {
     // mengubah token berdasarkan localStorage
     setToken(data.token)
 
-    // mengarahkan pengguna ke rute yang ditentukan ('/')
+    // mengarahkan pengguna ke rute yang ditentukan ('/') atau home
+    // kenapa kok ke home? karena home itu sudah ditetapkan sebagai route index
+    // asalnya dari path yang ditentukan di App.jsx
     navigate("/");
     }
   }

@@ -144,7 +144,7 @@ AppProvider(
       setToken,
     
       // menyimpan informasi pengguna
-      user
+      user, setUser
     }
   }>
 

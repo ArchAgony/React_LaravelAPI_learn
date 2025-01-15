@@ -11,15 +11,7 @@ export default function Home() {
     // )
 // ------------------------------------------------------------------------------------------------
 
-    // // mengambil data dari context yang disediakan oleh provider (AppProvider)
-    // const 
-
-    // // mengambil name di dalam context (ga harus nama sih, pokoknya yang ada di value dalam appContext)
-    // {name} = 
-    
-    // // mengakses data yang disediakan oleh context appContext
-    // // asalnya dari context yang dibuat menggunakan createContext
-    // useContext(appContext)
+    // const {name} = useContext(appContext)
 
     // return (
     //     <>
