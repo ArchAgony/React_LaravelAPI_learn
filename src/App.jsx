@@ -12,17 +12,23 @@ import Home from "./Pages/Home.jsx"
 // file terpisah yang akan dirender (berdasarkan kondisi)
 import Register from "./Pages/Auth/Register.jsx"
 import Login from "./Pages/Auth/Login.jsx"
+import { useContext } from 'react';
+import { appContext } from './context/appContext.jsx';
 
 // ------------------------------------------------------------------------------------------------
 
 // fungsi dasar pada react js
 // function App(){
+//     mengambil data dari context yang disediakan oleh provider (AppProvider)
+//     const {user} = useContext(appContext)
+
 //     return (
 //      <BrowserRouter>
 //       <Routes>
 //         <Route path='/' element={<Layout />}>
 //           <Route index element={<Home />} />
-//           <Route path="/register" element={<Register />}/>
+//           <Route path="/register" element={user ? <Home/> : <Register /> }/>
+//           <Route path="/register" element={user ? <Home/> : <Login /> }/>
 //           <Route path="/login" element={<Login />}/>
 //         </Route>
 //       </Routes>
@@ -61,6 +67,10 @@ import Login from "./Pages/Auth/Login.jsx"
 // dengan mengetik export default
 // tujuannya agar tidak perlu mendefinisikan ulang
 export default function App() {
+    
+    // mengambil data dari context yang disediakan oleh provider (AppProvider)
+    const {user} = useContext(appContext)
+
     return (
 
         // wrapper (pembungkus) utama yang digunakan untuk mengaktifkan fitur routing di aplikasi React.
@@ -88,8 +98,18 @@ export default function App() {
                     {/* komponen ini adalah isi dari komponen layout */}
                     {/* yang membedakan dengan komponen home adalah, komponen ini memiliki path tersendiri*/}
                     {/* jika komponen ini dirender, maka komponen home tidak akan dirender */}
-                    <Route path="/register" element={<Register />}/>
-                    <Route path="/login" element={<Login />}/>
+                    <Route path="/register" element={
+
+                        // jika kondisi benar, maka user akan tidak akan bisa mengakses halaman register
+                        user ? <Home/> 
+                        : <Register />
+                    }/>
+                    <Route path="/login" element={
+                        
+                        // jika kondisi benar, maka user tidak akan bisa mengakses halaman login
+                        user ? <Home/> 
+                        : <Login />
+                    }/>
                 </Route>
             </Routes>
         </BrowserRouter>

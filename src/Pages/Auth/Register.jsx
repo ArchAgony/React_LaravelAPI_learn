@@ -1,11 +1,14 @@
 // menangani dan mengelola state dalam komponen React js
 // State adalah data yang dapat berubah seiring waktu, seperti input pengguna, status aplikasi, dll.
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 // memindahkan pengguna ke rute lain secara programatis.
 import { useNavigate } from "react-router-dom";
+import { appContext } from "../../context/appContext";
 
 export default function Register() {
+  // const {token, setToken} = useContext(appContext)
+
   // menambahkan hooks
   // const [formData, setFormData] = useState({
   //     name: "",
@@ -33,8 +36,10 @@ export default function Register() {
   //         setErrors(data.errors)
   //     }else{
   //         console.log(data)
-  //         navigate('/')
   //         localStorage.setItem('token', data.token)
+  //         setToken(data.token)
+  //         navigate('/')
+  //         
   //     }
   // }
 
@@ -43,6 +48,7 @@ export default function Register() {
   // return (
   //     <>
   //         <h1 className="title">Register a new account</h1>
+  //         { token }
   //
   //         <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y">
   //             <div>
@@ -101,8 +107,18 @@ export default function Register() {
   // ------------------------------------------------------------------------------------------------
   // ------------------------------------------------------------------------------------------------
 
+  // mengambil data dari context yang disediakan oleh provider (AppProvider)
+  const 
+  
+  // mengambil setToken di dalam context (ga harus setToken sih, pokoknya yang ada di value dalam appContext)
+  {token, setToken} = 
+  
+  // mengakses data dari context appContext
+  // asalnya dari context yang dibuat menggunakan createContext
+  useContext(appContext)
+
+  // Variabel state yang menyimpan data form.
   const [
-    // Variabel state yang menyimpan data form.
     // contohnya adalah name: "", email: "", password: "", password_confirmation: ""
     // dimulai dengan nilai string kosong ("")
     formData,
@@ -172,10 +188,7 @@ export default function Register() {
     } else {
       // melihat data yang dicetak di console
       console.log(data);
-
-      // mengarahkan pengguna ke rute yang ditentukan ('/')
-      navigate("/");
-
+      
       // fitur browser untuk menyimpan data secara lokal di sisi klien
       localStorage.
       
@@ -190,6 +203,12 @@ export default function Register() {
         // data.token merujuk pada nilai token yang diperoleh dari objek data
         data.token
     );
+
+    // mengubah token berdasarkan localStorage
+    setToken(data.token)
+
+    // mengarahkan pengguna ke rute yang ditentukan ('/')
+    navigate("/");
     }
   }
 
@@ -198,6 +217,8 @@ export default function Register() {
   return (
     <>
       <h1 className="title">Register a new account</h1>
+      {/* menampilkan token yang sebelumnya sudah di update berdasarkan input user */}
+      {token}
 
       <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y">
         <div>
