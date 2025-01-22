@@ -14,6 +14,7 @@ import Register from "./Pages/Auth/Register.jsx"
 import Login from "./Pages/Auth/Login.jsx"
 import { useContext } from 'react';
 import { appContext } from './context/appContext.jsx';
+import Create from './Pages/posts/create.jsx';
 
 // ------------------------------------------------------------------------------------------------
 
@@ -104,10 +105,18 @@ export default function App() {
                         user ? <Home/> 
                         : <Register />
                     }/>
+
                     <Route path="/login" element={
                         
                         // jika kondisi benar, maka user tidak akan bisa mengakses halaman login
                         user ? <Home/> 
+                        : <Login />
+                    }/>
+
+                    <Route path="/create" element={
+                        
+                        // jika kondisi benar, maka user tidak akan bisa mengakses halaman login
+                        user ? <Create/> 
                         : <Login />
                     }/>
                 </Route>

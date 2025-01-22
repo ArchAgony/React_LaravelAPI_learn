@@ -198,7 +198,10 @@ export default function Login() {
           <input
             type="text"
             placeholder="Email"
+            /* menentukan data mana yang akan ditambah */
             value={formData.email}
+            // memperbarui state formData sesuai input pengguna
+            // penjelasan lebih lengkapnya ada di register.jsx
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }

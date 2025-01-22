@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client";
+import './App.css'
 
 // didapatkan dari file app.jsx yang tadi kita edit untuk membuat tampilan js
 import App from "./App.jsx";

@@ -36,6 +36,9 @@ export default function Layout() {
 
   //           (<div className="space-x-4">
   //               <div>Welcome {user.name}!</div>
+  //               <Link to="/create" className="nav-link">
+  //                   New post
+  //               </Link>
   //               <form onSubmit={handleLogout}>
   //                   <button className="nav-link">Logout</button>
   //               </form>
@@ -119,6 +122,13 @@ export default function Layout() {
             <div className="space-x-4">
               {/* kondisi jika user memiliki nilai */}
               <div>Welcome {user.name}!</div>
+
+              {/* membuat bagian untuk mengarahkan ke file create */}
+              <Link to="/create" className="nav-link">
+                New post
+              </Link>
+              
+              {/* membuat button logout untuk mengaktifkan fungsi handleLogout */}
               <form onSubmit={handleLogout}>
                 <button className="nav-link">Logout</button>
               </form>
