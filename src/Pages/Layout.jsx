@@ -100,9 +100,13 @@ export default function Layout() {
     // membuat kondisi
     // jika variabel res (data pengguna dari endpoint api/logout) benar, maka kondisi ini akan berjalan
     if (res.ok) {
+      // mengubah data user menjadi null
       setUser(null)
+      // mengubah data token menjadi null
       setToken(null)
+      // menghapus token di localstorage
       localStorage.removeItem("token")
+      // mengarahkan kembali ke halaman home (/)
       navigate("/")
     }
   }
